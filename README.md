@@ -1,8 +1,10 @@
 # Medilero
 
-Medilero ist eine Anlernhilfe von Elero-Geräten auf der Mediola, bei der das Binding der Tasten zu schwierig ist oder einfach nicht funktioniert.
+Medilero ist eine Anlernhilfe von Elero-Geräten auf der Mediola, bei der das Binding der Tasten nicht funktioniert.
 
 ## Wieso und wie funktioniert es?
+
+Da der Mediola Support bei diesem Thema schon öfters einfach nicht reagiert oder einfach auf Elero verwiesen hat, obwohl das Problem offensichtlich an der Mediola selber liegt, habe ich dieses Tool geschrieben, sodass das Anlernen funktioniert.
 
 Vermutet werden zwei Programmierfehler:
 * Einerseits in den Apps (AIO Creator NEO & IQontrol), wo die Lernbefehle manchmal nicht auf die Antwort des Lernbefehls warten.
@@ -12,6 +14,6 @@ Vermutet werden zwei Programmierfehler:
 
 Es wird **Java 8+** für das kompilieren bzw. ausführen dieser Applikation benötgt ([Oracle Download](https://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html))
 
-### Ausführen
+### Downloads
 
-Die Applikation kann entweder über einen einfachen Doppelklick ausgeführt werden, oder mithilfe der Konsole, wo auch die Info-Nachrichten angezeigt werden.
+Die bereits kompilierten Versionen können unter [Releases](https://github.com/dakralex/Medilero/releases) heruntergeladen werden.
