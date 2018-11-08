@@ -14,7 +14,7 @@ import org.apache.logging.log4j.Logger;
 public class Medilero extends Application {
 
 	//private static final String ICON_FILE = "mediola.png";
-	public static final String APPLICATION_NAME = "Medilero";
+	public static final String APPLICATION_NAME = "Medilero v1.0.0";
 	public static final int WINDOW_WIDTH = 400;
 	public static final int WINDOW_HEIGHT = 800;
 	private static final Logger logger = LogManager.getFormatterLogger();
