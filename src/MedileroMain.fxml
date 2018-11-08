@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import java.lang.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="800.0" maxWidth="400.0" minHeight="173.0" minWidth="400.0"
+            prefHeight="800.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.171">
+	<children>
+		<AnchorPane prefHeight="170.0" prefWidth="400.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+		            AnchorPane.topAnchor="0.0">
+			<children>
+				<Label layoutX="10.0" layoutY="10.0" prefHeight="20.0" prefWidth="380.0"
+				       text="Wilkommen zur Mediola Elero Anlernehilfe." AnchorPane.leftAnchor="10.0"
+				       AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0"/>
+				<Label layoutX="10.0" layoutY="40.0" prefHeight="50.0" prefWidth="380.0"
+				       text="Geben Sie bitte die IP-Adresse und das Passwort Ihres Mediola-Gerätes ein, um den Lernprozess zu starten."
+				       wrapText="true" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0"/>
+				<Label layoutX="10.0" layoutY="95.0" prefHeight="30.0" prefWidth="90.0" text="IP-Adresse"/>
+				<Label layoutX="10.0" layoutY="130.0" prefHeight="30.0" prefWidth="90.0" text="Passwort"
+				       AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0"/>
+				<TextField fx:id="fieldAddress" layoutX="100.0" layoutY="95.0" maxHeight="30.0" minHeight="30.0"
+				           prefHeight="30.0" prefWidth="190.0" stylesheets="@MedileroMain.css"/>
+				<PasswordField fx:id="fieldPassword" disable="true" layoutX="100.0" layoutY="130.0" maxHeight="30.0"
+				               minHeight="30.0" prefHeight="30.0" prefWidth="160.0" stylesheets="@MedileroMain.css"
+				               AnchorPane.bottomAnchor="10.0"/>
+				<CheckBox fx:id="checkUsePassword" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="260.0"
+				          layoutY="130.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT"
+				          onAction="#togglePasswordField" prefHeight="30.0" prefWidth="30.0"
+				          AnchorPane.bottomAnchor="10.0"/>
+				<Button fx:id="buttonConnect" layoutX="356.0" layoutY="130.0" maxHeight="30.0" minHeight="30.0"
+				        mnemonicParsing="false" onAction="#tryToConnect" prefHeight="30.0" prefWidth="95.0"
+				        text="Anmelden" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0"/>
+			</children>
+		</AnchorPane>
+		<AnchorPane fx:id="paneStep1" disable="true" layoutY="175.0" prefHeight="180.0" prefWidth="400.0"
+		            AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+			<children>
+				<Label layoutX="17.0" layoutY="14.0" prefHeight="70.0" prefWidth="380.0"
+				       text="Vor dem Anlernprozess müssen Sie die Geräte für einige Sekunden vom Strom nehmen, um diese für 5 Minuten in Lernbereitschaft zu bringen."
+				       textFill="RED" wrapText="true" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0"
+				       AnchorPane.topAnchor="10.0"/>
+				<Label layoutX="10.0" layoutY="83.0" prefHeight="50.0" prefWidth="380.0"
+				       text="Schritt 1: Wählen Sie den Kanal auf dem das Gerät angelernt werden soll und klicken Sie auf &quot;Starten&quot;."
+				       wrapText="true" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0"/>
+				<Label layoutX="14.0" layoutY="61.0" prefHeight="32.0" prefWidth="40.0" text="Kanal"
+				       AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0"/>
+				<ComboBox fx:id="comboChannel" layoutX="55.0" layoutY="68.0" onAction="#channelSelected"
+				          prefHeight="32.0" prefWidth="224.0" promptText="Wählen Sie den Kanal aus" visibleRowCount="7"
+				          AnchorPane.bottomAnchor="10.0">
+					<items>
+						<FXCollections fx:factory="observableArrayList">
+							<Integer fx:value="01"/>
+							<Integer fx:value="02"/>
+							<Integer fx:value="03"/>
+							<Integer fx:value="04"/>
+							<Integer fx:value="05"/>
+							<Integer fx:value="06"/>
+							<Integer fx:value="07"/>
+							<Integer fx:value="08"/>
+							<Integer fx:value="09"/>
+							<Integer fx:value="10"/>
+							<Integer fx:value="11"/>
+							<Integer fx:value="12"/>
+							<Integer fx:value="13"/>
+							<Integer fx:value="14"/>
+							<Integer fx:value="15"/>
+						</FXCollections>
+					</items>
+				</ComboBox>
+				<Button fx:id="buttonLearnStart" defaultButton="true" disable="true" layoutX="284.0" layoutY="68.0"
+				        mnemonicParsing="false" onAction="#startLearningProcess" prefHeight="32.0" prefWidth="106.0"
+				        text="Starten" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0"/>
+			</children>
+		</AnchorPane>
+		<AnchorPane fx:id="paneStep2" disable="true" layoutY="355.0" prefHeight="170.0" prefWidth="400.0"
+		            AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+			<children>
+				<Label layoutX="15.0" layoutY="10.0" prefHeight="110.0" prefWidth="380.0"
+				       text="Schritt 2: Die Geräte sollten sich nun auf- und abwärts bewegen. Klicken Sie den Pfeil kurz nachdem sich das Gerät in diese Richtung bewegt. Nach erfolgreichem Anlernen sollte das Gerät stillstehen. Für mehrere Geräte auf diesem Kanal wiederholen Sie diesen Schritt."
+				       wrapText="true" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="10.0"
+				       AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0"/>
+				<Button fx:id="buttonLearnUp" layoutX="10.0" layoutY="128.0" mnemonicParsing="false"
+				        onAction="#sendCodeUp" prefHeight="32.0" prefWidth="187.0" text="↑"
+				        AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0"/>
+				<Button fx:id="buttonLearnDown" layoutX="210.0" layoutY="123.0" mnemonicParsing="false"
+				        onAction="#sendCodeDown" prefHeight="32.0" prefWidth="187.0" text="↓"
+				        AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0"/>
+			</children>
+		</AnchorPane>
+		<AnchorPane fx:id="paneStep3" disable="true" layoutY="525.0" prefHeight="160.0" prefWidth="400.0"
+		            AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+			<children>
+				<Label layoutX="15.0" layoutY="4.0" prefHeight="100.0" prefWidth="380.0"
+				       text="Schritt 3: Nach dem Anlernen drücken Sie auf &quot;Beenden&quot;. Testen Sie das Gerät, indem Sie dieses z.B. in der IQontrol-App unter Beschattung &gt; Elero mit dem entsprechendem Kanal hinzufügen."
+				       wrapText="true" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0"
+				       AnchorPane.topAnchor="10.0"/>
+				<Button fx:id="buttonLearnStop" cancelButton="true" layoutX="10.0" layoutY="116.0"
+				        mnemonicParsing="false" onAction="#stopLearningProcess" prefHeight="32.0" prefWidth="380.0"
+				        text="Beenden" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0"
+				        AnchorPane.rightAnchor="10.0"/>
+			</children>
+		</AnchorPane>
+		<AnchorPane fx:id="paneExtra" disable="true" layoutY="554.0" prefHeight="110.0" prefWidth="400.0"
+		            AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="690.0">
+			<children>
+				<Button fx:id="buttonTestUp" layoutX="324.0" layoutY="6.0" mnemonicParsing="false"
+				        onAction="#sendCodeUp" prefHeight="28.0" prefWidth="69.0" text="↑" AnchorPane.rightAnchor="10.0"
+				        AnchorPane.topAnchor="10.0"/>
+				<Button fx:id="buttonTestDown" layoutX="324.0" layoutY="74.0" mnemonicParsing="false"
+				        onAction="#sendCodeDown" prefHeight="26.0" prefWidth="69.0" text="↓"
+				        AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0"/>
+				<Label layoutX="268.0" layoutY="10.0" prefHeight="91.0" prefWidth="48.0" text="Testen:"
+				       AnchorPane.bottomAnchor="10.0" AnchorPane.topAnchor="10.0"/>
+				<Button fx:id="buttonTestStop" layoutX="321.0" layoutY="40.0" mnemonicParsing="false"
+				        onAction="#sendCodeStop" prefHeight="28.0" prefWidth="69.0" text="STOP"
+				        AnchorPane.rightAnchor="10.0"/>
+				<Label layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="58.0" text="Elero-ID:"
+				       AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0"/>
+				<Label layoutX="10.0" layoutY="41.0" prefHeight="30.0" prefWidth="86.0" text="Kanal Status:"
+				       visible="false" AnchorPane.leftAnchor="10.0"/>
+				<TextField fx:id="fieldEid" editable="false" layoutX="76.0" layoutY="10.0" maxHeight="30.0"
+				           minHeight="30.0" prefHeight="30.0" prefWidth="175.0" promptText="123456"
+				           AnchorPane.leftAnchor="76.0" AnchorPane.topAnchor="10.0">
+					<font>
+						<Font name="Monospaced Regular" size="11.0"/>
+					</font>
+				</TextField>
+				<TextField fx:id="fieldState" editable="false" layoutX="26.0" layoutY="62.0" prefHeight="29.0"
+				           prefWidth="241.0" promptText="0000:000000000000" visible="false"
+				           AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0">
+					<font>
+						<Font name="Monospaced Regular" size="11.0"/>
+					</font>
+				</TextField>
+			</children>
+		</AnchorPane>
+		<Separator layoutY="170.0" prefHeight="5.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0"
+		           AnchorPane.rightAnchor="0.0"/>
+		<Separator layoutY="685.0" prefHeight="5.0" prefWidth="400.0" AnchorPane.leftAnchor="0.0"
+		           AnchorPane.rightAnchor="0.0"/>
+	</children>
+</AnchorPane>
